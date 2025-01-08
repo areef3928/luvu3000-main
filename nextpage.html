@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Next Page</title>
+  <style>
+    body {
+      font-family: "Georgia", serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(to top, #ff9a9e, #f7c6e0);
+      color: #2c3e50;
+      text-align: center;
+      overflow: hidden; /* ป้องกันการเลื่อนทั้งหน้า */
+    }
+
+    .content {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      padding: 30px;
+      max-width: 900px;
+      width: 90%;
+      animation: fadeIn 2s ease-in-out;
+      position: relative;
+      overflow-y: auto; /* ทำให้เลื่อนในกรณีที่เนื้อหายาว */
+      max-height: 80vh; /* กำหนดความสูงสูงสุดของกล่อง */
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+      color: #e74c3c;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    p {
+      font-size: 1.4em;
+      line-height: 1.8;
+      margin-bottom: 20px;
+      color: #34495e;
+    }
+
+    .hidden-box, .video-box {
+      margin-top: 40px;
+    }
+
+    .hidden-content, .video-content {
+      display: none;
+      background: #fdf2f2;
+      border: 2px solid #ff7f7f;
+      padding: 25px;
+      margin-top: 15px;
+      border-radius: 12px;
+      text-align: left;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .toggle-button, .video-button {
+      padding: 15px 30px;
+      background-color: #ff66b2;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 18px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+      transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .toggle-button:hover, .video-button:hover {
+      background-color: #ff3385;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    }
+
+    .video-content iframe {
+      width: 100%;
+      height: 400px;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes bounce {
+      0% { transform: translateY(0); }
+      30% { transform: translateY(-10px); }
+      50% { transform: translateY(5px); }
+      70% { transform: translateY(-5px); }
+      100% { transform: translateY(0); }
+    }
+
+    .toggle-button, .video-button {
+      animation: bounce 1s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <h1>Anniversary 1 Year</h1>
+    <p>Thank you for all your past and future journeys. The journey has passed through many obstacles. Relationships that shape us to grow.</p>
+    <p>ขอบคุณตลอดระยะเวลาการเดินทางที่ผ่านมาและอนาคตข้างหน้า การเดินทางที่ผ่านด่านอะไรมาเยอะแยะ ความสัมพันธ์ที่หล่อหลอมให้เราเติบโต</p>
+
+    <div class="hidden-box">
+      <button class="toggle-button">กดเพื่อดูข้อความเพิ่มเติม</button>
+      <div class="hidden-content">
+        <p>
+            ไม่คิดเลยว่าจะเดินจับมือกันมายาวขนาดนี้ ที่บอกว่า 1 ปี มันเยอะ ก็ยังคิดว่ามันเยอะอยู่เช่นเคย เพราะการที่เราจะรู้จัก จะได้ใช้ชีวิต จะได้สานความสัมพันธ์ รวม ๆ แล้ว ไม่น้อยเลย เธอยังคิดว่ามันยังน้อยอยู่ไหม ? 
+            การที่ได้รู้จักคนที่ชื่อ นิอัซวาณีย์ ชีวิตเค้าราบรื่นมาก มีความสุขมาก เป็นส่วนหนึ่งของชีวิตที่ขาดไม่ได้เลยจริง ๆ จะว่าไปก่อนหน้านี้ก็ยังไม่ค้นพบความสุขส่วนนี้เลย จนมาเจอเธอ หากถามว่ารักเธอมากแค่ไหน เค้าตอบไม่ถูกเลยว่ามันเทียบกับอะไรได้บ้าง รักที่พาครอบครัวรู้จัก(คู่อื่น ๆ มีเยอะ จนเลิกไปก็มี นั้นเป็นส่วนของอนาคตเนาะ แต่กำลังพูดถึงสิ่งที่เกิดขึ้นอยู่ สิ่งที่ทำอยู่ เค้าเองก็ไม่อยากให้มันเป็นแบบนั้นเหมือนกัน แค่ยกตัวอย่าง) เธอเองก็แสดงให้เห็นในส่วนนั้นแล้ว เราต่างรักกันมาก (ส่วนที่ว่า รักไม่เท่ากับคำกล่าวนิกะห์ รอก่อนนะ เค้าเองก็อยากให้มันถูกต้องไวไว แต่ขอรอให้มีงานหลักประกันว่าจะดูแลหนูได้) เค้ารักเธอนะ.🤍
+        </p>
+      </div>
+    </div>
+
+    <div class="video-box">
+      <button class="video-button">กดเพื่อดูวิดีโอ</button>
+      <div class="video-content">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/xtwZJBw3ySw?si=nxnCMzGLTr8naEbr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggleButton = document.querySelector(".toggle-button");
+      const hiddenContent = document.querySelector(".hidden-content");
+
+      toggleButton.addEventListener("click", () => {
+        if (hiddenContent.style.display === "none" || hiddenContent.style.display === "") {
+          hiddenContent.style.display = "block";
+          toggleButton.textContent = "ซ่อนข้อความ";
+        } else {
+          hiddenContent.style.display = "none";
+          toggleButton.textContent = "กดเพื่อดูข้อความเพิ่มเติม";
+        }
+      });
+
+      const videoButton = document.querySelector(".video-button");
+      const videoContent = document.querySelector(".video-content");
+
+      videoButton.addEventListener("click", () => {
+        if (videoContent.style.display === "none" || videoContent.style.display === "") {
+          videoContent.style.display = "block";
+          videoButton.textContent = "ซ่อนวิดีโอ";
+        } else {
+          videoContent.style.display = "none";
+          videoButton.textContent = "กดเพื่อดูวิดีโอ";
+        }
+      });
+    });
+
+    
+  </script>
+</body>
+</html>
