@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page 3</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="background">
+    <div class="video-container">
+      <div class="video-box" id="video1-box">
+        <video id="video1" controls class="video" onclick="expandVideo('video1')">
+          <source src="123.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <div class="video-box" id="video2-box" style="display: none;">
+        <video id="video2" controls class="video" onclick="expandVideo('video2')">
+          <source src="1234.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+    <div id="message-box" style="display: none;">
+      <p1>“เราคุยเรื่องอนาคตไว้เยอะเลย ขอต่อเรื่องราวอนาคตต่อนะ “</p1>
+    </div>
+    <div id="message-box2" style="display: none;">
+      <p2>‘ดีกันนะ เค้ารักหนูนะ นิอัซวาณีย์❤️‍🩹🤍’</p2>
+    </div>
+  </div>
+
+  <!-- Modal for full-screen video -->
+  <div id="videoModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <video id="modal-video" controls></video>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

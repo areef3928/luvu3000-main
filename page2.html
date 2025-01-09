@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f0f8ff; /* สีพื้นหลัง */
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      box-sizing: border-box;
+    }
+
+    .container {
+      text-align: center;
+      width: 80%;
+      max-width: 800px;
+      background-color: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .image-container {
+      opacity: 0; /* ซ่อนรูปภาพเริ่มต้น */
+      transition: opacity 3s ease-in-out; /* ค่อยๆ แสดง/ซ่อนรูปภาพ */
+      margin-bottom: 20px;
+    }
+
+    .image-container.visible {
+      opacity: 1;
+    }
+
+    /* กล่องข้อความ */
+    .message-container {
+      display: none; /* ซ่อนข้อความเมื่อเริ่มต้น */
+      margin-top: 20px;
+      padding: 20px;
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      color: #555;
+      font-size: 1.1em;
+      line-height: 1.6;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .message-container p {
+      margin: 0;
+    }
+
+    @media screen and (max-width: 600px) {
+      h1 {
+        font-size: 2em;
+      }
+
+      .message-container {
+        font-size: 1em;
+      }
+
+      .container {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    
+
+    <!-- รูปภาพที่จะแสดง -->
+    <div class="image-container" id="imageContainer">
+      <img src="AH2.png" alt="Image" id="image" width="300" height="auto">
+    </div>
+
+    <!-- ข้อความที่จะแสดงหลังจากรูปหายไป -->
+    <div class="message-container" id="messageContainer">
+      <p>No explanation</p>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const imageContainer = document.getElementById("imageContainer");
+      const messageContainer = document.getElementById("messageContainer");
+
+      // แสดงรูปภาพทันทีเมื่อโหลดหน้า
+      setTimeout(() => {
+        imageContainer.classList.add("visible"); // เพิ่มคลาสที่ทำให้รูปภาพปรากฏ
+
+        // ซ่อนรูปภาพหลังจาก 3 วินาที
+        setTimeout(() => {
+          imageContainer.classList.remove("visible"); // ลบคลาสเพื่อให้รูปภาพหายไป
+
+          // แสดงกล่องข้อความหลังจากรูปภาพหาย
+          setTimeout(() => {
+            messageContainer.style.display = "block"; // แสดงกล่องข้อความ
+          }, 500); // รอ 0.5 วินาทีหลังจากรูปภาพหาย
+        }, 3000); // 3000 มิลลิวินาที = 3 วินาที
+      }, 100); // ให้เวลานิดหน่อยเพื่อให้เริ่มแสดง
+    });
+  </script>
+</body>
+</html>
