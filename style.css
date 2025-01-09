@@ -98,3 +98,23 @@ video:hover {
   color: white;
   margin-top: 20px;
 }
+
+@media screen and (max-width: 600px) {
+  h1 {
+      font-size: 1.8em; /* ลดขนาดหัวเรื่อง */
+  }
+
+  .container {
+      width: 95%; /* ปรับความกว้างให้เต็มจอมากขึ้น */
+      padding: 15px;
+  }
+
+  .image-container img {
+      width: 100%; /* ปรับขนาดรูปภาพให้พอดีกับหน้าจอ */
+      height: auto;
+  }
+
+  .message-container {
+      font-size: 1em; /* ปรับขนาดข้อความ */
+  }
+}
